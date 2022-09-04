@@ -1,0 +1,21 @@
+.quiz-container {
+    position: relative;
+    height: 200px;
+    margin-top: 40px;
+}
+
+#questions {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+#answers {
+    margin-bottom: 20px;
+    text-align: left;
+    display: inline-block;
+}
+
+#rightwrong {
+    color:beige
+}
+
