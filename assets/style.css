@@ -1,19 +1,29 @@
-.quiz-container {
+#high-scores {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #362163;
+    margin: 25px;   
+}
+
+#timer {
+    display: block;
     position: relative;
-    height: 200px;
-    margin-top: 40px;
+    float: right;
+    margin: 25px;
 }
 
-#questions {
-    font-size: 30px;
-    margin-bottom: 10px;
+.starter-page {
+    margin: 40px;
+    display: block;
+    text-align: center;
 }
 
-#answers {
-    margin-bottom: 20px;
-    text-align: left;
-    display: inline-block;
+#start-box {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    margin: 30px;
 }
+
 
 #rightwrong {
     color:beige
