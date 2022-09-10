@@ -40,6 +40,7 @@ h1 {
 }
 
 .quiz-container {
+    display: none;
     margin-left: auto;
     margin-right: auto;
     margin-top: 50px;
@@ -57,7 +58,37 @@ h1 {
 .option {
     margin: 15px;
     width: 150px;
-    border-radius: 2px;
+    border-radius: 4px;
+    background-color: #944dff;
+    color: white;
+    border-color: #944dff;
+}
+
+.wrong-right {
+    color: grey;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-style: italic;
+}
+
+.all-done {
+    display:none;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    height: 450px;
+    width: 650px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.all-done p {
+    margin-bottom: 40px;
+    margin-top: 40px;
+}
+
+.score-sumbit {
+    margin: 15px;
+    width: 70px;
+    border-radius: 4px;
     background-color: #944dff;
     color: white;
     border-color: #944dff;
