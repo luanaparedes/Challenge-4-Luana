@@ -8,7 +8,7 @@
     border: none;   
 }
 
-#timer {
+.timer {
     display: block;
     position: relative;
     float: right;
