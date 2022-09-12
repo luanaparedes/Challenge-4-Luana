@@ -87,8 +87,11 @@ h1 {
 
 /* all done container formatting score styling initials box and submit button */
 
+#all-done {
+    display: none;
+}
+
 .all-done {
-    display:none;
     margin-left: auto;
     margin-right: auto;
     margin-top: 50px;

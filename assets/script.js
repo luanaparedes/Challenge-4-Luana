@@ -109,7 +109,7 @@ function answerIsWrong(){
 }
 
 function scoreRender(){
-    quiz.style.display = "none";
-    allDone.style.display = "block";
+    document.getElementById("quiz-container").style.display = "none";
+    document.getElementById("all-done").style.display = "block";
 }
 
