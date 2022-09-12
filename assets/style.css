@@ -8,6 +8,10 @@
     border: none;   
 }
 
+#timer {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
 .timer {
     display: block;
     position: relative;
@@ -45,13 +49,17 @@ h1 {
 
 /* quiz container formatting, question and option button styling */
 .quiz-container {
-    display: none;
+    display: block;
     margin-left: auto;
     margin-right: auto;
     margin-top: 50px;
     height: 450px;
     width: 650px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#quiz-container {
+    display: none;
 }
 
 .option-container {
@@ -69,16 +77,21 @@ h1 {
     border-color: #944dff;
 }
 
-.wrong-right {
+
+#result {
     color: grey;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-style: italic;
+    display: none;
 }
 
 /* all done container formatting score styling initials box and submit button */
 
+#all-done {
+    display: none;
+}
+
 .all-done {
-    display:none;
     margin-left: auto;
     margin-right: auto;
     margin-top: 50px;
