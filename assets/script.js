@@ -9,6 +9,9 @@ const op2 = document.getElementById("op2")
 const op3 = document.getElementById("op3")
 const op4 = document.getElementById("op4")
 const timer = document.getElementById("timer")
+const option = document.getElementsByClassName("option")
+const allDone = document.getElementsByClassName("all-done")
+
 
 // questions
 
@@ -20,39 +23,39 @@ let questions = [
         op2 : "booleans",
         op3 : "alerts",
         op4 : "numbers",
-        correct : "op1",
+        correct : "strings",
     },{
         question : "The condition in an if / else statement is enclosed within ____.",
         op1 : "quotes",
         op2 : "curly brackets",
         op3 : "parentheses",
         op4 : "square braces",
-        correct : "op4",
+        correct : "square braces",
     },{
         question : "Arrays in JavaScript can be used to store _____.",
         op1 : "numbers and strings",
         op2 : "other arrays",
         op3 : "booleans",
         op4 : "all of the above",
-        correct : "op4",
+        correct : "all of the above",
     },{
         question : "String values must be enclosed within _____ when being assigned to variables.",
         op1 : "commas",
         op2 : "curly braces",
         op3 : "quotes",
         op4 : "parentheses",
-        correct : "op4",
+        correct : "parentheses",
     },{
         question : "A very useful tool used during development and debugging for printing content to the debugger is:",
         op1 : "for loops",
         op2 : "console log",
         op3 : "JavaScript",
         op4 : "terminal / bash",
-        correct : "op2",
+        correct : "console log",
     }
 ];
 
-let lastQuestionIndex = questions.length - 1;
+const lastQuestion = questions.length - 1;
 
 let runningQuestion = 0;
 
@@ -63,35 +66,50 @@ function renderQuestion() {
     let q = questions[runningQuestion];
 
     question.innerHTML = "<p>"+q.question +"</p>";
-    op1.innerHTML = q.op1
-    op2.innerHTML = q.op2
-    op3.innerHTML = q.op3
-    op4.innerHTML = q.op4
+    op1.innerHTML = q.op1;
+    op2.innerHTML = q.op2;
+    op3.innerHTML = q.op3;
+    op4.innerHTML = q.op4;
+
 }
 
-// timer here?
+startButton.addEventListener("click",startQuiz);
+
+function startQuiz(){
+    start.style.display = "none";
+    //timer stuff
+    renderQuestion();
+    quiz.style.display = "block";
+}                                                                                     
 
 function checkAnswer(answer){
-    if(questions[runningQuestionIndex].correct == answer){
-        score++;
+    if( answer == questions[runningQuestion].correct){
         answerIsCorrect();
     }else{
         answerIsWrong();
     }
-    if (runningQuestionIndex < lastQuestionIndex){
-        count = 0;
-        runningQuestionIndex++;
-        questionRender();
+
+    if (runningQuestion < lastQuestion){
+        runningQuestion++;
+        renderQuestion()
     }else{
-        // do something
+        scoreRender();
     }
 };
 
-startButton.addEventListener("click",startQuiz);
-//timer stuff
-function startQuiz(){
-    start.style.display = "none";
-    //timer stuff
-    questionRender();
-    quiz.style.display = "block";
+function answerIsCorrect(){
+    document.getElementById("result").style.display = "block"
+    document.getElementById("result").innerHTML = "Correct!";
 }
+
+function answerIsWrong(){
+    document.getElementById("result").style.display = "block"
+    document.getElementById("result").innerHTML = "Wrong!";
+    //timer
+}
+
+function scoreRender(){
+    quiz.style.display = "none";
+    allDone.style.display = "block";
+}
+
