@@ -77,7 +77,7 @@ startButton.addEventListener("click",startQuiz);
 
 function startQuiz(){
     start.style.display = "none";
-    //timer stuff
+    startTimer()
     renderQuestion();
     quiz.style.display = "block";
 }                                                                                     
@@ -113,3 +113,33 @@ function scoreRender(){
     document.getElementById("all-done").style.display = "block";
 }
 
+function startTimer(){
+
+    var count = 75;
+    var interval = setInterval(function() {
+        document.getElementById("timer").innerHTML = count;
+        count--
+    if (count === 0){
+            clearInterval(interval);
+            document.getElementById('timer').innerHTML='0';
+            scoreRender()
+        }
+    else if (document.getElementById("all-done").style.display === "block") {
+        clearInterval(interval);
+        document.getElementById('timer').innerHTML= count;
+    }
+    
+
+    },1000);
+
+}
+
+//var count = 15;
+//var interval = setInterval(function startTimer(){
+ // document.getElementById('timer').innerHTML=count;
+ // count--;
+ // if (count === 0){
+ //   clearInterval(interval);
+ //   document.getElementById('timer').innerHTML='0';
+ // }
+//},1000);
