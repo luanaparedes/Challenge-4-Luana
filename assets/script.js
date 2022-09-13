@@ -11,6 +11,7 @@ const op4 = document.getElementById("op4")
 const timer = document.getElementById("timer")
 const option = document.getElementsByClassName("option")
 const allDone = document.getElementsByClassName("all-done")
+const submitButton = document.getElementsByClassName("score-submit")
 
 
 // questions
@@ -111,6 +112,20 @@ function answerIsWrong(){
 function scoreRender(){
     document.getElementById("quiz-container").style.display = "none";
     document.getElementById("all-done").style.display = "block";
+    
+    document.getElementById("score").innerHTML = "Your final score is " + timer.textContent + ".";
+}
+
+submitButton.addEventListener("click",userSubmit);
+
+var userScore = timer.textContent
+var initialsInput = document.getElementById("initials")
+
+function userSubmit() {
+    var user = {
+        firstName: userScore.value.trim(),
+        lastName: initialsInput.value.trim(),
+    }
 }
 
 function startTimer(){
@@ -133,13 +148,3 @@ function startTimer(){
     },1000);
 
 }
-
-//var count = 15;
-//var interval = setInterval(function startTimer(){
- // document.getElementById('timer').innerHTML=count;
- // count--;
- // if (count === 0){
- //   clearInterval(interval);
- //   document.getElementById('timer').innerHTML='0';
- // }
-//},1000);
