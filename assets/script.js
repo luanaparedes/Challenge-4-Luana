@@ -111,6 +111,7 @@ function answerIsWrong(){
 function scoreRender(){
     document.getElementById("quiz-container").style.display = "none";
     document.getElementById("all-done").style.display = "block";
+    document.getElementById("score").textContent = 
 }
 
 function startTimer(){
@@ -133,13 +134,3 @@ function startTimer(){
     },1000);
 
 }
-
-//var count = 15;
-//var interval = setInterval(function startTimer(){
- // document.getElementById('timer').innerHTML=count;
- // count--;
- // if (count === 0){
- //   clearInterval(interval);
- //   document.getElementById('timer').innerHTML='0';
- // }
-//},1000);
