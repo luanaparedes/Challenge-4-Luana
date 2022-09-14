@@ -24,35 +24,35 @@ let questions = [
         op2 : "booleans",
         op3 : "alerts",
         op4 : "numbers",
-        correct : "strings",
+        correct : "op3",
     },{
         question : "The condition in an if / else statement is enclosed within ____.",
         op1 : "quotes",
         op2 : "curly brackets",
         op3 : "parentheses",
         op4 : "square braces",
-        correct : "square braces",
+        correct : "op4",
     },{
         question : "Arrays in JavaScript can be used to store _____.",
         op1 : "numbers and strings",
         op2 : "other arrays",
         op3 : "booleans",
         op4 : "all of the above",
-        correct : "all of the above",
+        correct : "op4",
     },{
         question : "String values must be enclosed within _____ when being assigned to variables.",
         op1 : "commas",
         op2 : "curly braces",
         op3 : "quotes",
         op4 : "parentheses",
-        correct : "parentheses",
+        correct : "op4",
     },{
         question : "A very useful tool used during development and debugging for printing content to the debugger is:",
         op1 : "for loops",
         op2 : "console log",
         op3 : "JavaScript",
         op4 : "terminal / bash",
-        correct : "console log",
+        correct : "op2",
     }
 ];
 
@@ -98,13 +98,14 @@ function checkAnswer(answer){
     }
 };
 
+
 function answerIsCorrect(){
-    document.getElementById("result").style.display = "block"
+    document.getElementById("result").style.display = "block";
     document.getElementById("result").innerHTML = "Correct!";
 }
 
 function answerIsWrong(){
-    document.getElementById("result").style.display = "block"
+    document.getElementById("result").style.display = "block";
     document.getElementById("result").innerHTML = "Wrong!";
     //timer
 }
@@ -113,20 +114,9 @@ function scoreRender(){
     document.getElementById("quiz-container").style.display = "none";
     document.getElementById("all-done").style.display = "block";
     
-    document.getElementById("score").innerHTML = "Your final score is " + timer.textContent + ".";
+    document.getElementById("final-score").innerHTML = timer.textContent
 }
 
-submitButton.addEventListener("click",userSubmit);
-
-var userScore = timer.textContent
-var initialsInput = document.getElementById("initials")
-
-function userSubmit() {
-    var user = {
-        firstName: userScore.value.trim(),
-        lastName: initialsInput.value.trim(),
-    }
-}
 
 function startTimer(){
 
@@ -146,5 +136,29 @@ function startTimer(){
     
 
     },1000);
+
+}
+
+var uScore = document.getElementById("final-score");
+var userInit = document.getElementById("initials");
+
+submitButton.addEventListener("click", renderScore());
+
+function saveScore(e){
+    e.preventDefault();
+
+    uScore.textContent = userScore
+    userInit.textContent = userInitials
+
+    localStorage.setItem("userInitials", userInitials);
+
+    localStorage.setItem("userScore", userScore);
+
+}
+
+function renderScore(){
+
+    localStorage.getItem("userInitials");
+    localStorage.getItem("userScore");
 
 }
