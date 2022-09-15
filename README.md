@@ -9,7 +9,7 @@ To run the webpage [click this link](https://luanaparedes.github.io/Callenge-3-L
 ## Usage
 This webpage is a simple JavaScript quiz on basics of JavaScript. Time yourself and beat your highscore while learning JavaScript basics.
 
-![Quiz Webpage](.assets\screenshot.png)
+![Quiz Webpage](C:\Users\dhann\Desktop\Bootcmap\Challenge-4-Luana\assets\screenshot.png)
 
 ## Credits
 
