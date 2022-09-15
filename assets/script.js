@@ -12,6 +12,7 @@ const timer = document.getElementById("timer")
 const option = document.getElementsByClassName("option")
 const allDone = document.getElementsByClassName("all-done")
 const submitButton = document.getElementsByClassName("score-submit")
+const highscores = document.getElementsByClassName("highscores-container")
 
 
 // questions
@@ -142,23 +143,27 @@ function startTimer(){
 var uScore = document.getElementById("final-score");
 var userInit = document.getElementById("initials");
 
-submitButton.addEventListener("click", renderScore());
 
-function saveScore(e){
-    e.preventDefault();
 
-    uScore.textContent = userScore
-    userInit.textContent = userInitials
+function saveScore(){
 
-    localStorage.setItem("userInitials", userInitials);
+    document.getElementsByClassName('all-done')[0].style.display = "none";
+    
+    document.getElementsByClassName('highscores-container')[0].style.display = "block";
 
-    localStorage.setItem("userScore", userScore);
+    
+    localStorage.setItem("userInitials", userInit);
+
+    localStorage.setItem("userScore", uScore);
 
 }
 
-function renderScore(){
+backButton = document.getElementsByClassName('go-back')
 
-    localStorage.getItem("userInitials");
-    localStorage.getItem("userScore");
 
+
+function restart(){
+    
+    document.getElementsByClassName('highscores-container')[0].style.display = "none";
+    document.getElementById('start-page').style.display = "block";
 }
