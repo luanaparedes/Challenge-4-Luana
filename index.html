@@ -55,7 +55,7 @@
       </div>
       <div>
         <p id="score">Your final score is</p> <p id="final-score"></p>
-        <p>Enter intials: <input type="text" id="initials" /> <button class="score-sumbit">Submit</button></p>
+        <p>Enter intials: <input type="text" id="initials" /> <button class="score-sumbit" onclick="saveScore()">Submit</button></p>
       </div>
 
     </div>
@@ -68,7 +68,7 @@
       <ul class="saved-scores">
         <li>score</li>
       </ul>
-      <button class="go-back">Go Back</button><button class="clear-scores">Clear Highscores</button>
+      <button class="go-back" onclick="restart()">Go Back</button><button class="clear-scores">Clear Highscores</button>
 
     </div>
     <script src="./assets/script.js"></script>
