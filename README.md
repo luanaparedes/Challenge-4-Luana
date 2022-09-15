@@ -9,7 +9,7 @@ To run the webpage [click this link](https://luanaparedes.github.io/Challenge-4-
 ## Usage
 This webpage is a simple JavaScript quiz on basics of JavaScript. Time yourself and beat your highscore while learning JavaScript basics.
 
-![Quiz Webpage](\assets\screenshot.png)
+![Quiz Webpage](assets/screenshot.png)
 
 ## Credits
 
